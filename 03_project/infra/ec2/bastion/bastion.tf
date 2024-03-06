@@ -7,9 +7,7 @@ resource "aws_instance" "bastion" {
 
     subnet_id = data.terraform_remote_state.vpc.outputs.public-subnet-2a-id
     vpc_security_group_ids = [data.terraform_remote_state.security_group.outputs.ssh_id]
-
-    # security_groups = [ data.terraform_remote_state.security_group.outputs.ssh_id ]
-   
+     
     tags = {
       Name = "aws10-bastion"
     }
